@@ -200,7 +200,6 @@ async def show_example_report(message: Message):
 ]))
 async def order_personal_report(message: Message):
     await message.answer(
-    await message.answer(
         "✨ Заявку прийнято.\n\n"
         "Я отримала сповіщення та незабаром зв'яжуся з вами для оформлення особистого голосового міні-розбору."
     )
@@ -250,7 +249,7 @@ async def handle_date(message: Message):
     except ValueError:
         await message.answer(
             "Помилка. Введіть дату правильно:\n"
-            "01.01.1970 или 01011970"
+            "01.01.1970 або 01011970"
         )
         return
 
@@ -263,12 +262,12 @@ async def handle_date(message: Message):
             f"{text}"
         )
 
-    elif choice == "Проблеми в партнёрстві":
+    elif choice == "Проблеми в партнерстві":
         result = calculate_partner_problem(day, month, year)
         text = KCH_TEXTS.get(result, "Для цього аркану поки нема тлумачення.")
 
         await message.answer(
-            f"Проблеми в партнёрстві = {result}\n\n"
+            f"Проблеми в партнерстві = {result}\n\n"
             f"{text}"
         )
 
